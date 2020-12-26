@@ -1,0 +1,93 @@
+﻿@model IEnumerable<TestDoAn.Models.NhanVien>
+
+@{
+    ViewBag.Title = "IndexNhanVien";
+    Layout = "~/Views/Home/_LayoutQLCH.cshtml";
+}
+
+<h2>DANH SÁCH NHÂN VIÊN CỬA HÀNG</h2>
+<hr />
+<div>
+    <input type="text" id="searchI" placeholder="Hãy điền mã vào đây">
+    <button id="search" class="btn btn-dark">
+        Tìm Kiếm
+    </button>
+</div>
+<div id="divsearch">
+
+</div>
+
+
+
+<script type="text/javascript">
+    $().ready(function () {
+        $('#search').click(function () {
+            var id = $('#searchI').val();
+            var url = '/QLKV/Search/' + id;
+            $.get(url, function (data) { $('#divsearch').html(data); });
+        })
+    })
+</script>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.manv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tennv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cmnd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sdt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.diachi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.matkhau)
+        </th>
+        <th>
+           @*@Html.DisplayNameFor(model => model.chucvu.tencv)*@
+            Chức Vụ
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.manv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tennv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cmnd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sdt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.diachi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.matkhau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.chucvu.tencv)
+            </td>
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.manv }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Chi Tiết", "Detail", new { id = item.manv }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.manv }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+

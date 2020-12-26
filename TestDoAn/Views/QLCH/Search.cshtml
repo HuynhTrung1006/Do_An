@@ -1,0 +1,48 @@
+﻿@model TestDoAn.Models.HoaDon
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.mahd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ngaylaphd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.manv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NhanVien.tennv)
+        </th>
+
+        <th></th>
+    </tr>
+
+
+        <tr>
+            <td>
+                @Html.DisplayFor(Model=>Model.mahd)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.ngaylaphd)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.manv)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => Model.NhanVien.tennv)
+            </td>
+
+            <td>
+                @Html.ActionLink("Chi Tiết", "FormCTHD", new { id = Model.mahd }, new { @class = "btn btn-success" })
+                @{ 
+                    if (Session["ChucVu"].Equals("quanlykv"))
+                    {
+                        @Html.ActionLink("Xóa","xoahoadon", new { id = Model.mahd }, new { @class = "btn btn-danger" })
+                    }
+                }
+            </td>
+        </tr>
+    
+
+</table>

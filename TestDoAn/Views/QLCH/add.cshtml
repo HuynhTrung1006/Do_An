@@ -1,0 +1,67 @@
+﻿@model TestDoAn.Models.NguyenLieu
+
+@{
+    ViewBag.Title = "add";
+    Layout = "~/Views/Home/_LayoutQLCH.cshtml";
+}
+
+<h2>Thêm Số Lượng Nguyên Liệu Nhập Hàng</h2>
+
+<div>
+    <h4>Nguyên Liệu</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-3 text-lg-center">Mã Nguyên Liệu</div>
+        <div class="col-md-3 form-control">@Model.manl</div>
+        <div class="col-md-6"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 text-lg-center">Tên Nguyên Liệu</div>
+        <div class="col-md-3 form-control">@Model.tenhh</div>
+        <div class="col-md-6"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 text-lg-center">Đơn Vị Tình</div>
+        <div class="col-md-3 form-control">@Model.dvt</div>
+        <div class="col-md-6"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 text-lg-center">Nhà Cung Cấp</div>
+        <div class="col-md-3 form-control">@Model.nhacungcap</div>
+        <div class="col-md-6"></div>
+    </div>
+    <div class="row">
+        @{
+            var a = Model.hsd.ToShortDateString();
+        }
+        <div class="col-md-3 text-lg-center">Hạn Sử Dụng</div>
+        <div class="col-md-3 form-control">@a</div>
+        <div class="col-md-6"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 text-lg-center">Đơn Giá</div>
+        <div class="col-md-3 form-control">@Model.dongia</div>
+        <div class="col-md-6"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 text-lg-center">Số Lượng</div>
+        <div class="col-md-3 form-control">@Model.soluong</div>
+        <div class="col-md-6"></div>
+    </div>
+</div>
+<form action="@Url.Action("addNL","QLCH",new { id = Model.manl })" method="get">
+    <div class="row">
+        <div class="col-md-3 text-lg-center">Nhập số lượng nguyên liệu nhập hàng </div>
+        <div class="col-md-3 ">
+            <input type="number" id="slnhap" name="slnhap" min="1"/>
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-2">
+            <input type="submit" value="Thêm Số Lượng" class="btn btn-primary" />
+        </div>
+        <div class="col-md-8"></div>
+    </div>
+</form>

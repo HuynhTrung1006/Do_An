@@ -1,0 +1,79 @@
+﻿@model IEnumerable<TestDoAn.Models.NguyenLieu>
+
+@{
+    ViewBag.Title = "IndexNL";
+    Layout = "~/Views/Home/_LayoutQLCH.cshtml";
+}
+
+<h2>Danh Sách Nguyên Liệu 
+    </h2>
+
+<div>
+    @Html.ActionLink("Thêm", "FormThemNL","QLCH", new { @class = "btn btn-success" })
+</div>
+<table class="table table-borderless">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.manl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tenhh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dvt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nhacungcap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hsd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maloai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dongia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soluong)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.manl)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tenhh)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.dvt)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.nhacungcap)
+    </td>
+    <td>
+        @{ 
+            string date = item.hsd.ToShortDateString();
+        }
+        @Html.DisplayFor(modelItem => date)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.maloai)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.dongia)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.soluong)
+    </td>
+    <td>
+        @Html.ActionLink("Chỉnh sửa", "FormSuaNL", new { id = item.manl }, new { @class = "btn btn-primary" }) |
+        @Html.ActionLink("Xóa", "FormXoaNL", new { id = item.manl }, new { @class = "btn btn-danger" }) 
+    </td>
+</tr>
+}
+
+</table>

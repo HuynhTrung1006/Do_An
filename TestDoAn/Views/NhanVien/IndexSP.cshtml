@@ -1,0 +1,60 @@
+﻿@model IEnumerable<TestDoAn.Models.SanPham>
+
+@{
+    ViewBag.Title = "IndexSP";
+    Layout = "~/Views/Home/_LayoutNV.cshtml";
+}
+
+<h2>Danh Sách Sản Phẩm</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.masp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tensp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dongia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dvt)
+        </th>
+        <th>Số Lượng</th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.masp)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tensp)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.dongia)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.dvt)
+    </td>
+     <td>
+         <form action="@Url.Action("chonMua",new {id=item.masp })" method="get">
+             <div class="row">
+                 <div class="col-md-3">
+                     <input type="text"  name="@item.masp" class="form-control" placeholder="Số Lượng"/>
+                 </div>
+                 <div class="col-md-3">
+                     <input type="submit" value="Chọn mua" class="btn btn-primary" />
+                 </div>
+             </div>
+
+         </form>
+     </td>
+    
+</tr>
+}
+
+</table>

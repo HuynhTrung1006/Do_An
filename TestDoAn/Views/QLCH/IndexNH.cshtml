@@ -1,0 +1,73 @@
+﻿@model IEnumerable<TestDoAn.Models.NguyenLieu>
+
+@{
+    ViewBag.Title = "IndexNH";
+    Layout = "~/Views/Home/_LayoutQLCH.cshtml";
+}
+
+<h2>Danh Sách Nguyên Liệu</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Mã
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tenhh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dvt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nhacungcap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hsd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maloai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dongia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soluong)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.manl)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tenhh)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.dvt)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.nhacungcap)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.hsd)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.maloai)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.dongia)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.soluong)
+    </td>
+    <td>
+        @Html.ActionLink("Thêm số lượng", "add", new { id = item.manl }, new {@class="btn btn-danger"}) 
+        
+    </td>
+</tr>
+}
+
+</table>

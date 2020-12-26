@@ -1,0 +1,87 @@
+﻿@model IEnumerable<TestDoAn.Models.HoaDon>
+@using TestDoAn.Models
+@{
+    ViewBag.Title = "IndexHD";
+    Layout = "~/Views/Home/_LayoutQLCH.cshtml";
+}
+
+<h2>Danh Sách Hóa Đơn</h2>
+<hr />
+<div class="row ">
+    <div class="col-md-1"></div>
+    <input type="text" id="searchI" placeholder="Hãy điền mã vào đây">
+    <div class="col-md-1"></div>
+    <button id="search" class="btn btn-dark">
+        Tìm Kiếm
+    </button>
+</div>
+<div id="divsearch">
+
+</div>
+<hr/>
+
+
+
+<script type="text/javascript">
+    $().ready(function () {
+        $('#search').click(function () {
+            var id = $('#searchI').val();
+            var url = '/QLCH/Search/' + id;
+            $.get(url, function (data) { $('#divsearch').html(data); });
+        })
+    })
+</script>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.mahd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ngaylaphd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.manv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NhanVien.tennv)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.mahd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ngaylaphd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.manv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NhanVien.tennv)
+            </td>
+
+            <td>
+
+                @{
+                    if (Session["ChucVu"].Equals("quanlykv"))
+                    {
+                        @Html.ActionLink("Chi Tiết", "FormCTHD", new { id = item.mahd }, new { @class = "btn btn-success" }) 
+                      
+                        @Html.ActionLink("Xóa", "xoahoadon", new { id = item.mahd }, new { @class = "btn btn-danger" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Chi Tiết", "FormCTHD", new { id = item.mahd }, new { @class = "btn btn-success" })
+                    }
+                }
+            </td>
+        </tr>
+    }
+
+</table>

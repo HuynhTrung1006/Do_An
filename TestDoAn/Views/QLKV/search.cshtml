@@ -1,0 +1,63 @@
+﻿@model TestDoAn.Models.NhanVien
+
+
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.manv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tennv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cmnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sdt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.diachi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.matkhau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.macv)
+            </th>
+            <th></th>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.manv)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.tennv)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.cmnd)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.sdt)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.diachi)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.matkhau)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.macv)
+            </td>
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "Edit", "QLKV", new { id = Model.manv }, new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Chi tiết", "Details", "QLKV", new { id = Model.manv }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Xóa", "Delete", "QLKV", new { id = Model.manv }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+
+
+    </table>
+

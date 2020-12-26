@@ -1,0 +1,102 @@
+﻿@model TestDoAn.Models.NguyenLieu
+
+@{
+    ViewBag.Title = "Xóa nguyên liệu ";
+    Layout = "~/Views/Home/_LayoutQLCH.cshtml";
+}
+
+<h2>Biểu Mẫu Xóa Hàng Hóa</h2>
+@if (ViewBag.XoaNguyenLieu == true)
+{
+    <h3>Bạn có chắc muốn xóa nguyên liệu này ?</h3>
+}
+else
+{
+    
+    <h3>Bạn không thể xóa nguyên liệu này !</h3>
+}
+<div>
+    @using (Html.BeginForm("xoaNL", "QLCH", new { id = Model.manl }))
+    {
+        @Html.AntiForgeryToken()
+        <h4>Thông tin</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.manl)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.manl)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.tenhh)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tenhh)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.dvt)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.dvt)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.nhacungcap)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nhacungcap)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.hsd)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.hsd)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.maloai)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.maloai)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.dongia)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.dongia)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.soluong)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.soluong)
+            </dd>
+
+        </dl>
+
+
+
+
+        <div class="form-actions no-color">
+            @if (ViewBag.XoaNguyenLieu == true)
+            {
+                <input type="submit" value="Xóa" class="btn btn-danger" />
+            } 
+            
+        </div>
+    }
+</div>

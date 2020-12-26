@@ -1,0 +1,54 @@
+﻿@model IEnumerable<TestDoAn.Models.ChiTietHoaDon>
+
+@{
+    ViewBag.Title = "FormCTHD";
+    Layout = "~/Views/Home/_LayoutQLCH.cshtml";
+}
+
+<h2>Chi Tiết Hóa Đơn</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.soluong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dongia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SanPham.tensp)
+        </th>
+        <th>
+            Thành Tiền
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.soluong)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.dongia)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SanPham.tensp)
+    </td>
+    <td>
+        @(item.dongia*item.soluong)
+    </td>
+
+</tr>
+    }
+    <tr >
+        <td class="bg-dark">Tổng Tiền</td>
+        <td class="bg-dark"></td>
+        <td class="bg-dark"></td>
+        <td class="bg-dark">@ViewBag.thanhtien</td>
+    </tr>
+</table>
+
+
