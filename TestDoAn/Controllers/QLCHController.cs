@@ -11,7 +11,7 @@ namespace TestDoAn.Controllers
     public class QLCHController : Controller
     {
 
-			//	QUAN LI HOA DON ac
+			//	QUAN LI HOA DON 
 	private Models.QuanLyCuaHangEntites db = new Models.QuanLyCuaHangEntites();
         // GET: Qlch
         public ActionResult Index()
