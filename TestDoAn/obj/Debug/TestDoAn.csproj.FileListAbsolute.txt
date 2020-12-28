@@ -290,3 +290,7 @@ F:\XayDungPhanMemQuanLyCuaHangThucAnNhanh\TestDoAn\TestDoAn\obj\Debug\TestDoAn.c
 F:\XayDungPhanMemQuanLyCuaHangThucAnNhanh\TestDoAn\TestDoAn\obj\Debug\TestDoAn.csproj.CopyComplete
 F:\XayDungPhanMemQuanLyCuaHangThucAnNhanh\TestDoAn\TestDoAn\obj\Debug\TestDoAn.dll
 F:\XayDungPhanMemQuanLyCuaHangThucAnNhanh\TestDoAn\TestDoAn\obj\Debug\TestDoAn.pdb
+D:\VisualStudio\HK_I_2020-2021\Open_Soure\Do_An\TestDoAn\obj\Debug\TestDoAn.csprojAssemblyReference.cache
+D:\VisualStudio\HK_I_2020-2021\Open_Soure\Do_An\TestDoAn\obj\Debug\TestDoAn.csproj.CoreCompileInputs.cache
+D:\VisualStudio\HK_I_2020-2021\Open_Soure\Do_An\TestDoAn\obj\Debug\TestDoAn.dll
+D:\VisualStudio\HK_I_2020-2021\Open_Soure\Do_An\TestDoAn\obj\Debug\TestDoAn.pdb
